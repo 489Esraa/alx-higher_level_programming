@@ -1,15 +1,8 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    new_matrix = matrix.copy()
-    if matrix is None:
-        return
-    if len(matrix) == 0:
-        print()
-    else:
-        for arr in new_matrix:
-            for el in range(0, len(arr)):
-                m = arr[el] * arr[el]
-                print("{:d}".format(m), end="")
-                if el != len(arr) - 1:
-                    print(end=" ")
-            print()
+    new_matrix = [row[:] for row in matrix]
+    for i in range(0, len(matrix)):
+        for j in range(0, len(matrix[i])):
+            new_matrix[i][j] = matrix[i][j] ** 2
+
+    return new_matrix
