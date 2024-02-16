@@ -1,3 +1,3 @@
 -- counts
 SELECT COUNT (*) FROM first_table
-WHERE id = 98;
+WHERE id = 89;
