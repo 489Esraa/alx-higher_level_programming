@@ -1,2 +1,2 @@
 -- .6show the table
-SELECT TABLE first_table
+SHOW COLUMNS FROM first_table;
