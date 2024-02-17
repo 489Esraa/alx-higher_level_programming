@@ -3,6 +3,6 @@
 -- if the table exist the command fail
 -- if passed the table of the name added
 CREATE TABLE IF NOT ESISTS first_table(
-id int,
-name varchar(256)
+id INT,
+name VARCHAR(256)
 );
