@@ -25,4 +25,5 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("the message size must be >= 0")
-        self.__size = size
+        else:
+            self.__size = size
