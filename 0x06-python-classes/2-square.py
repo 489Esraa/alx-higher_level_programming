@@ -2,8 +2,6 @@
 """
 This module defines an empty class called Square.
 """
-
-
 class Square:
     """
     This class represents a geometric square.
@@ -11,14 +9,11 @@ class Square:
     Attributes:
     - size: private attribute
     """
-
     def __init__(self, size=0):
         """
         Initialize a Square instance.
-
         Args:
             size (int): The size of the square.
-
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
