@@ -14,15 +14,18 @@ class Square:
 
     def __init__(self, size=0):
         """
-      the size attribute that define
-      must be integer 
-      must be > 0
-      else raise error
-      """
+        Initialize a Square instance.
+
+        Args:
+            size (int): The size of the square.
+
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
+        """
         self.__size = size
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if __size < 0:
             raise ValueError("the message size must be >= 0")
-        else:
-            self.__size = size
+        self.__size = size
