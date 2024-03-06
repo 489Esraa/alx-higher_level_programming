@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+
 """
 This module defines an empty class called Rectangle.
 """
 
 
-class Square:
+class Rectangle:
     """
     This class represents a geometric square.
 
@@ -12,4 +13,4 @@ class Square:
     - None
     """
 
-    Rectangle
+    pass
