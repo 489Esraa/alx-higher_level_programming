@@ -10,7 +10,8 @@ class Rectangle:
     This class represents a geometric square.
 
     Attributes:
-    - None
+    - width : the width of shape
+    - height : the height of shape
     """
 
     def __init__(self, width=0, height=0):
@@ -24,8 +25,8 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        if type(self.__width) is int:
-            if self.__width < 0:
+        if type(value) is int:
+            if value < 0:
                 raise ValueError("width must be >= 0")
             else:
                 self.__width = value
@@ -39,8 +40,8 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        if type(self.__height) is int:
-            if self.__height < 0:
+        if type(value) is int:
+            if value < 0:
                 raise ValueError("height must be >= 0")
             else:
                 self.__height = value
