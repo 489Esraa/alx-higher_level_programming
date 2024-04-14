@@ -1,21 +1,22 @@
 #!/usr/bin/python3
-"""lists all states from the database hbtn_0e_0_usa"""
+""" this module connect the database with python using argv
+"""
 
+import MySQLdb
+from sys import argv
+
+# script that lists all states from the database hbtn_0e_0_usa
 if __name__ == "__main__":
-
-    import MySQLdb
-    import sys
-
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-    )
-
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC;")
-    rows = cur.fetchall()
-    for row in rows:
+    u_name = argv[1]
+    u_pass = argv[2]
+    db_name = argv[3]
+    port = "3306"
+    host = "localhost"
+    db_access = MySQLdb.connect(host, u_name, u_pass, db_name, charset="utf8")
+    sql_order = db_access.cursor()
+    sql_order.execute("SELECT * FROM states ORDER BY states.id ASC;")
+    query_rows = sql_order.fetchall()
+    for row in query_rows:
         print(row)
+    sql_order.close()
+    db_access.close()
