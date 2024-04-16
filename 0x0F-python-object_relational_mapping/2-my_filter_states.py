@@ -15,7 +15,7 @@ if __name__ == "__main__":
         port=port,
         user=mysql_username,
         passwd=mysql_password,
-        db=database_name
+        db=database_name,
     )
     cur = conn.cursor()
     sql_query = """SELECT * FROM states WHERE BINARY name = %s ORDER BY states.id ASC"""
