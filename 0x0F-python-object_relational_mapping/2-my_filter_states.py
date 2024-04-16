@@ -15,7 +15,9 @@ if __name__ == "__main__":
     conn = MySQLdb.connect(mysql_username, mysql_password, database_name, host, port)
     cur = conn.cursor()
     sql_query = """SELECT * FROM states WHERE BINARY name =
-                "{}" ORDER BY states.id ASC;""".format(argv[4])
+                "{}" ORDER BY states.id ASC;""".format(
+        argv[4]
+    )
     cur.execute(sql_query)
     rows = cur.fetchall()
     for r in rows:
