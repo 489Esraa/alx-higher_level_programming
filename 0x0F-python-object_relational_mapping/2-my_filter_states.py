@@ -1,25 +1,27 @@
 #!/usr/bin/python3
-"""Takes in an argument and displays all values in the states table 
-of hbtn_0e_0_usa where name matches the argument.
+""" this module connect the database with python using argv
 """
+
 import MySQLdb
 from sys import argv
 
+# script that takes in an argument and displays all values
+# in the states table of hbtn_0e_0_usa where name matches the argument.
 if __name__ == "__main__":
-    mysql_username = argv[1]
-    mysql_password = argv[2]
-    database_name = argv[3]
+    u_name = argv[1]
+    u_pass = argv[2]
+    db_name = argv[3]
     port = 3306
     host = "localhost"
-    conn = MySQLdb.connect(mysql_username, mysql_password, database_name, host, port)
-    cur = conn.cursor()
-    sql_query = """SELECT * FROM states WHERE BINARY name =
+    db_access = MySQLdb.connect(host, u_name, u_pass, db_name, port)
+    sql_order = db_access.cursor()
+    sql_text = """SELECT * FROM states WHERE BINARY name =
                 "{}" ORDER BY states.id ASC;""".format(
         argv[4]
     )
-    cur.execute(sql_query)
-    rows = cur.fetchall()
-    for r in rows:
-        print(r)
-    cur.close()
-    conn.close()
+    sql_order.execute(sql_text)
+    query_rows = sql_order.fetchall()
+    for row in query_rows:
+        print(row)
+    sql_order.close()
+    db_access.close()
