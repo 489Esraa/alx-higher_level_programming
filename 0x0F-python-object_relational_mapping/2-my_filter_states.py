@@ -18,7 +18,8 @@ if __name__ == "__main__":
         database_name
     )
     cur = conn.cursor()
-    sql_query = """SELECT * FROM states WHERE BINARY name = %s ORDER BY states.id ASC"""
+    sql_query = """SELECT * FROM states WHERE BINARY name =
+                "{}" ORDER BY states.id ASC;""".format(argv[4])
     cur.execute(sql_query, (state_name_searched,))
     rows = cur.fetchall()
     for r in rows:
