@@ -7,7 +7,6 @@ if __name__ == "__main__":
     mysql_username = argv[1]
     mysql_password = argv[2]
     database_name = argv[3]
-    state_name_searched = argv[4]
     host = "localhost"
     port = 3306
     conn = MySQLdb.connect(
@@ -20,7 +19,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
     sql_query = """SELECT * FROM states WHERE BINARY name =
                 "{}" ORDER BY states.id ASC;""".format(argv[4])
-    cur.execute(sql_query, (state_name_searched,))
+    cur.execute(sql_query)
     rows = cur.fetchall()
     for r in rows:
         print(r)
